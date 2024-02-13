@@ -14,19 +14,18 @@ body{
     position: relative;
     width: 70%;
     height: 70%;
-    border-radius: 50%;
     border-style: dotted;
 }
-.heart-container{
-    position:absolute;
-    width: 100px;
-    height: 100px;
+.heart-container {
+    position: absolute;
+    width: 100px; 
+    height: 100px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: moveY infinite 5s linear, moveX infinite 5s linear;
-}
-
+    animation: moveAbout 10s;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
 .heart{
     position:absolute;
     width: 80%;
@@ -42,26 +41,14 @@ body{
     }
 }
 
-
-@keyframes moveHeartContainer {
-    0% {
-        top: calc(50% - 50px);
-        left: calc(50% - 150px);
-    }
-    25% {
-        top: calc(50% - 150px + 50px * Math.sin(-Math.PI / 2));
-        left: calc(50% + 50px * Math.cos(-Math.PI / 2));
-    }
-    50% {
-        top: calc(50% + 50px * Math.sin(-Math.PI));
-        left: calc(50% + 50px * Math.cos(-Math.PI));
-    }
-    75% {
-        top: calc(50% + 50px * Math.sin(-Math.PI / 2));
-        left: calc(50% - 150px + 50px * Math.cos(-Math.PI / 2));
-    }
-    100% {
-        top: calc(50% - 50px);
-        left: calc(50% - 150px);
-    }
+@keyframes moveAbout{
+    0% { top: 0; left: 0; transform: translate(-50%, -50%); }
+  15% { top: 0; left: 100%; transform: translate(-50%, -50%); }
+  30% { top: 100%; left: 100%; transform: translate(-50%, -50%); }
+  45% { top: 100%; left: 0; transform: translate(-50%, -50%); }
+  60% { top: 0; left: 0; transform: translate(-50%, -50%); }
+  80% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 1; }
+  100% { top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; }
 }
+
+
