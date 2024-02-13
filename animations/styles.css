@@ -1,11 +1,9 @@
 body{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     padding: 0;
     margin: 0;
     display:flex;
-
-
 }
 
 
@@ -21,20 +19,32 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: shrink 10s linear reverse;
 }
 
 .heart{
     position:absolute;
     width: 80%;
-    animation: heartbeat 1s 1s infinite alternate;
+    animation: heartbeat .5s infinite alternate;
 }
 
-@keyframe heartbeat{
+@keyframes heartbeat{
     from{
         width:80%;
     }
     to{
         width:100%;
+    }
+}
+
+@keyframes shrink{
+    from{
+        width: 100px;
+        height: 100px;
+    }
+    to{
+        width: 0px;
+        height: 0px;
     }
 }
 
